@@ -1,2 +1,133 @@
+:root {
+  --background-color: hsl(30, 38%, 92%);
+  --card-background: hsl(0, 0%, 100%);
+  --primary-color: hsl(158, 36%, 37%);
+  --primary-hover-color: hsl(158, 42%, 18%);
+  --heading-color: hsl(212, 21%, 14%);
+  --body-text-color: hsl(228, 12%, 48%);
+  --button-text-color: hsl(0, 0%, 100%);
+  --shadow-color: hsla(212, 21%, 14%, 0.12);
+}
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+body {
+  background-color: var(--background-color);
+  color: var(--body-text-color);
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: min(600px, 90vw);
+  background-color: var(--card-background);
+  box-shadow: 0 8px 24px 0 var(--shadow-color);
+  margin: auto;
+  border: none;
+  border-radius: 12px;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.details {
+  padding: 2rem;
+}
+.category {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.title {
+  margin-top: 0.7rem;
+  font-family: "Fraunces", serif;
+  color: var(--heading-color);
+  font-size: 2rem;
+  line-height: 1;
+}
+.description {
+  line-height: 1.7;
+  margin: 1.5rem 0;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.price p {
+  color: var(--primary-color);
+  font-family: "Fraunces", serif;
+  line-height: 1;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.price del {
+  font-size: 0.9rem;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem;
+  font: inherit;
+  font-weight: 700;
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+.btn:hover {
+  background: var(--primary-hover-color);
+  transform: scale(1.03);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--primary-hover-color);
+  outline-offset: 3px;
+}
+
+@media (max-width: 500px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
