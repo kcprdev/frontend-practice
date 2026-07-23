@@ -106,6 +106,9 @@ body {
 .faq-item:last-child {
   border: none;
 }
+.active{
+    display: block;
+}
 .attribution {
   display: none;
 }
