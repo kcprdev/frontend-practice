@@ -1,0 +1,111 @@
+:root {
+  --clr-bg-page: hsl(275, 100%, 97%);
+  --clr-bg-card: hsl(0, 100%, 100%);
+
+  --clr-text-primary: hsl(292, 42%, 14%);
+  --clr-text-secondary: hsl(292, 16%, 49%);
+
+  --clr-accent: hsl(281, 83%, 54%);
+
+  --clr-border: hsl(275, 100%, 94%);
+
+  --clr-hover: hsl(281, 83%, 54%);
+  --clr-focus: hsl(281, 83%, 54%);
+
+  --clr-shadow: rgba(0, 0, 0, 0.1);
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-bg-page);
+  background-image: url("./assets/images/background-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+}
+.faq-card {
+  background-color: var(--clr-bg-card);
+  width: min(90vw, 600px);
+  padding: 2rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px var(--clr-shadow);
+}
+.faq-header {
+  color: var(--clr-text-primary);
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.title{
+    font-weight: 700;
+    font-size: 3rem;
+}
+.faq-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--clr-border);
+}
+.btn {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  text-align: left;
+  padding: 0.25rem 0;
+
+  transition: color 0.3s ease;
+}
+.question {
+  color: var(--clr-text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.answer {
+ margin-top: 1rem;
+  color: var(--clr-text-secondary);
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  display: none;
+}
+.btn:hover .question {
+  color: var(--clr-hover);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--clr-focus);
+  outline-offset: 4px;
+}
+.btn:active .question{
+  color: var(--clr-accent);
+}
+.faq-item:last-child {
+  border: none;
+}
+.attribution {
+  display: none;
+}
