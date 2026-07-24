@@ -1,0 +1,175 @@
+:root {
+  --bg-page: hsl(216, 12%, 8%);
+  --bg-card: hsl(213, 19%, 18%);
+  --bg-circle: hsl(213, 19%, 22%);
+
+  --text-primary: hsl(0, 100%, 100%);
+  --text-secondary: hsl(217, 12%, 63%);
+
+  /* Primary (Orange) */
+  --primary: hsl(25, 97%, 53%);
+
+  /* Button States */
+  --hover-bg: hsl(25, 97%, 53%);
+  --hover-text: hsl(0, 100%, 100%);
+
+  --active-bg: hsl(0, 100%, 100%);
+  --active-text: hsl(216, 12%, 8%);
+
+  --focus-ring: hsl(25, 97%, 53%);
+
+  --shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Overpass, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-secondary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--bg-card);
+  width: min(90vw, 400px);
+  border: none;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+.icon-star {
+  background: var(--bg-circle);
+  padding: 0.8rem;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.icon-star:hover {
+  transform: rotate(25deg) scale(1.1);
+}
+
+.title {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin: 1.5rem 0;
+  font-size: 2.5rem;
+}
+.description {
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+.numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  gap: 1.2rem;
+}
+.number {
+  background-color: var(--bg-circle);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  aspect-ratio: 1;
+  text-align: center;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+.number:hover {
+  background: var(--primary);
+  color: var(--text-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.number:active {
+  transform: scale(0.95);
+}
+
+.number.selected {
+  background: var(--text-primary);
+  color: var(--active-text);
+}
+
+.btn {
+  margin: 1.5rem 0;
+  width: 100%;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.25rem;
+  border-radius: 24px;
+  padding: 1rem;
+  color: var(--bg-page);
+  background-color: var(--primary);
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+.btn:hover {
+  background: var(--text-primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.number:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
+.thank-you {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.added {
+  display: inline-block;
+  background-color: var(--bg-circle);
+  color: var(--primary);
+  border: none;
+  text-align: center;
+  border-radius: 24px;
+  padding: 1.2rem;
+  margin: 1.2rem 0;
+}
+.thank-title {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.attribution {
+  display: none;
+}
