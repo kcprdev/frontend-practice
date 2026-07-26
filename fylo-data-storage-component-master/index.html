@@ -1,31 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
   <title>Frontend Mentor | Fylo data storage component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <main class="container">
 
-  You’ve used 815 GB of your storage
+    <section class="left-card">
+      <img src="images/logo.svg" alt="Fylo logo" class="logo" />
 
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
+      <div class="icons">
+        <div class="icon-box">
+          <img src="images/icon-document.svg" alt="Document" />
+        </div>
+
+        <div class="icon-box">
+          <img src="images/icon-folder.svg" alt="Folder" />
+        </div>
+
+        <div class="icon-box">
+          <img src="images/icon-upload.svg" alt="Upload" />
+        </div>
+      </div>
+    </section>
+
+    <section class="right-card">
+      <p class="description">
+        You've used <strong>815 GB</strong> of your storage
+      </p>
+
+      <div class="progress">
+        <div class="progress-fill">
+          <div class="progress-thumb"></div>
+        </div>
+      </div>
+
+      <div class="progress-labels">
+        <span>0 GB</span>
+        <span>1000 GB</span>
+      </div>
+
+      <div class="message-box">
+        <span class="storage-left">185</span>
+
+        <span class="storage-text"> GB LEFT </span>
+      </div>
+    </section>
+  </main>
+
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge"> Frontend Mentor </a>. Coded by <a href="#"> Karri Chaitanya
+      Pratap Reddy </a>.
   </footer>
 </body>
+
 </html>
