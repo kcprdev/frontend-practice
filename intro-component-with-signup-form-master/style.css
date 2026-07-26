@@ -1,0 +1,297 @@
+:root {
+  /* Primary colors */
+  --color-primary-red: hsl(0, 100%, 74%);
+  --color-primary-green: hsl(154, 59%, 51%);
+
+  /* Accent */
+  --color-accent-purple: hsl(248, 32%, 49%);
+
+  /* Neutral colors */
+  --color-dark-text: hsl(249, 10%, 26%);
+  --color-light-text: hsl(246, 25%, 77%);
+
+  /* Background */
+  --color-background: var(--color-primary-red);
+
+  /* Form */
+  --color-form-background: white;
+  --color-input-border: hsl(246, 25%, 77%);
+
+  /* States */
+  --color-error: var(--color-primary-red);
+
+  /* Button */
+  --color-button: var(--color-primary-green);
+  --color-button-hover: hsl(154, 59%, 45%);
+
+  /* Shadow */
+  --color-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+
+  background-color: var(--color-background);
+  background-image: url("./images/bg-intro-desktop.png");
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+}
+
+/* Main Layout */
+
+.container {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 60px;
+
+  padding: 40px;
+}
+
+/* Left Section */
+
+.intro {
+  max-width: 520px;
+}
+
+.intro h1 {
+  font-size: 50px;
+  line-height: 1.1;
+  font-weight: 700;
+
+  margin-bottom: 25px;
+}
+
+.intro p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Right Section */
+
+.signup {
+  width: 450px;
+}
+
+/* Trial Banner */
+
+.trial-banner {
+  background-color: var(--color-accent-purple);
+
+  padding: 18px;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.trial-banner p {
+  font-size: 14px;
+}
+
+.trial-banner strong {
+  font-weight: 700;
+}
+
+/* Form Card */
+
+.form {
+  background-color: var(--color-form-background);
+
+  padding: 35px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 10px 20px var(--color-shadow);
+}
+
+/* Inputs */
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input {
+  width: 100%;
+
+  padding: 17px 20px;
+
+  border: 1px solid var(--color-input-border);
+
+  border-radius: 5px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  color: var(--color-dark-text);
+
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--color-dark-text);
+  font-weight: 500;
+}
+
+input:focus {
+  border: 2px solid var(--color-accent-purple);
+}
+
+/* Error Icon */
+
+.error-icon {
+  position: absolute;
+
+  right: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: none;
+}
+
+/* Error Text */
+
+.error-message {
+  display: none;
+
+  color: var(--color-error);
+
+  font-size: 11px;
+
+  font-style: italic;
+
+  text-align: right;
+
+  margin-top: 5px;
+}
+
+/* Submit Button */
+
+.submit-btn {
+  width: 100%;
+
+  padding: 17px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background-color: var(--color-button);
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: var(--color-button-hover);
+}
+
+/* Terms */
+
+.terms {
+  color: var(--color-light-text);
+
+  font-size: 11px;
+
+  text-align: center;
+
+  margin-top: 15px;
+}
+
+.terms a {
+  color: var(--color-error);
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+/* Footer */
+
+.attribution {
+  display: none;
+}
+
+/* Error State (for JS later) */
+
+.input-group.error input {
+  border: 2px solid var(--color-error);
+}
+
+.input-group.error .error-icon,
+.input-group.error .error-message {
+  display: block;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  body {
+    background-image: url("./images/bg-intro-mobile.png");
+  }
+
+  .container {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 25px;
+
+    gap: 35px;
+  }
+
+  .intro {
+    max-width: 400px;
+  }
+
+  .intro h1 {
+    font-size: 32px;
+  }
+
+  .signup {
+    width: 100%;
+
+    max-width: 450px;
+  }
+
+  .form {
+    padding: 25px;
+  }
+}
