@@ -1,0 +1,264 @@
+:root {
+  /* ========= Brand ========= */
+
+  --clr-primary-start: hsl(6, 100%, 80%);
+  --clr-primary-end: hsl(335, 100%, 65%);
+
+  /* ========= Background ========= */
+
+  --clr-body-bg: hsl(229, 57%, 11%);
+  --clr-card-bg: hsl(228, 56%, 26%);
+  --clr-progress-bg: hsl(229, 57%, 18%);
+
+  /* ========= Text ========= */
+
+  --clr-text-main: hsl(243, 100%, 93%);
+  --clr-text-secondary: hsl(229, 7%, 55%);
+  --clr-text-dark: hsl(229, 57%, 11%);
+
+  /* ========= Bubble ========= */
+
+  --clr-bubble-bg: #fff;
+
+  /* ========= Progress ========= */
+
+  --clr-progress-thumb: #fff;
+
+  /* ========= Icons ========= */
+
+  --clr-icon-bg: hsl(229, 57%, 11%);
+
+  /* ========= Shadow ========= */
+
+  --shadow-card: 0 15px 30px rgba(0, 0, 0, 0.25);
+
+  /* ========= Radius ========= */
+
+  --radius-card: 15px;
+  --radius-icon: 10px;
+  --radius-pill: 999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--clr-body-bg);
+  background-image: url(images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% auto;
+
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  width: min(1100px, 90%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.left-card {
+  max-width: 360px;
+  width: 100%;
+
+  background: var(--clr-card-bg);
+
+  padding: 2.5rem;
+
+  border-radius: var(--radius-card);
+  border-top-right-radius: 6rem;
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--clr-icon-bg);
+
+  border-radius: var(--radius-icon);
+}
+
+
+.right-card {
+  position: relative;
+
+  max-width: 540px;
+  width: 100%;
+
+  background: var(--clr-card-bg);
+
+  padding: 2.5rem;
+
+  border-radius: var(--radius-card);
+
+  color: var(--clr-text-main);
+}
+
+.description {
+  color: var(--clr-text-secondary);
+
+  margin-bottom: 1rem;
+
+  font-size: 0.9rem;
+}
+
+.description strong {
+  color: var(--clr-text-main);
+}
+
+.progress {
+  width: 100%;
+
+  height: 20px;
+
+  padding: 3px;
+
+  background: var(--clr-progress-bg);
+
+  border-radius: var(--radius-pill);
+}
+
+.progress-fill {
+  position: relative;
+
+  width: 81.5%;
+  height: 100%;
+
+  background: linear-gradient(
+    to right,
+    var(--clr-primary-start),
+    var(--clr-primary-end)
+  );
+
+  border-radius: var(--radius-pill);
+}
+
+.progress-thumb {
+  position: absolute;
+
+  top: 50%;
+  right: 2px;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: var(--clr-progress-thumb);
+
+  transform: translateY(-50%);
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 0.6rem;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+}
+
+.message-box {
+  position: absolute;
+
+  top: -45px;
+  right: 40px;
+
+  width: 180px;
+  height: 72px;
+
+  background: var(--clr-bubble-bg);
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: var(--clr-text-dark);
+
+  font-weight: 700;
+}
+
+.storage-left {
+  font-size: 2.5rem;
+}
+
+.storage-text {
+  font-size: 0.75rem;
+
+  color: var(--clr-text-secondary);
+
+  letter-spacing: 1px;
+}
+
+.message-box::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: -20px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 20px solid var(--clr-bubble-bg);
+  border-left: 20px solid transparent;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url(images/bg-mobile.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .message-box {
+    top: auto;
+    bottom: -35px;
+    left: 50%;
+    right: auto;
+
+    transform: translateX(-50%);
+  }
+
+  .message-box::after {
+    display: none;
+  }
+}
+
+.attribution {
+  display: none;
+}
