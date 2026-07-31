@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,700;1,800&display=swap");
+
+:root {
+  --bg-page: hsl(0, 0%, 94%);
+  --bg-card: hsl(0, 100%, 100%);
+  --bg-button: hsl(259, 100%, 65%);
+  --bg-button-hover: hsl(0, 0%, 0%);
+
+  --text-primary: hsl(0, 0%, 0%);
+  --text-secondary: hsl(0, 1%, 44%);
+  --text-label: hsl(0, 1%, 44%);
+  --text-placeholder: hsl(0, 1%, 44%);
+  --text-accent: hsl(259, 100%, 65%);
+  --text-error: hsl(0, 100%, 67%);
+
+  --border-input: hsl(0, 0%, 86%);
+  --border-input-focus: hsl(259, 100%, 65%);
+  --border-error: hsl(0, 100%, 67%);
+  --border-divider: hsl(0, 0%, 86%);
+
+  --ff-primary: "Poppins", sans-serif;
+
+  --radius-input: 0.5rem;
+  --radius-card: 1.5rem 1.5rem 8rem 1.5rem;
+
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-page);
+  font-family: var(--ff-primary);
+}
+
+.card {
+  width: min(90vw, 800px);
+  background: var(--bg-card);
+  padding: 3rem;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.inputs {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.input-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: var(--text-label);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-input);
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: inherit;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.input:focus {
+  border-color: var(--border-input-focus);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+.input,
+.btn {
+  transition: 0.2s ease;
+}
+
+.divider {
+  position: relative;
+  border-bottom: 1px solid var(--border-divider);
+  margin: 2rem 0 3rem;
+}
+
+.btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 65px;
+  height: 65px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-button);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--bg-button-hover);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.result p {
+  font-size: 5rem;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.result span {
+  color: var(--text-accent);
+}
+
+.error {
+  color: var(--text-error);
+  font-size: 0.75rem;
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+
+.input.error-border {
+  border-color: var(--border-error);
+}
+
+.input-section.error label {
+  color: var(--text-error);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem 1.5rem 6rem 1.5rem;
+  }
+
+  .inputs {
+    gap: 1rem;
+  }
+
+  .input {
+    font-size: 1.25rem;
+    padding: 0.9rem;
+  }
+
+  .divider {
+    margin: 4rem 0 3rem;
+  }
+
+  .btn {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+  }
+
+  .result p {
+    font-size: 3.5rem;
+  }
+}
+
+.attribution {
+  display: none;
+}
