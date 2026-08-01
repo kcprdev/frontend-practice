@@ -1,0 +1,110 @@
+:root{
+    --backgroundcolor:#D88C9A;
+    --backgroundcard:#F1E3D3;
+    --border:#F2D0A9;
+    --button:#99C1B9;
+    --button-hover:#8E7DBE;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--backgroundcolor);
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    line-height:1.5;
+}
+
+.card{
+    background-color: var(--backgroundcard);
+    width:min(90vw,400px);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow:0 8px 24px rgba(0,0,0,.12);
+    transition:transform .2s ease;
+}
+
+.card:hover{
+transform:translateY(-2px);
+}
+
+form{
+    margin: 2rem 0 1rem 0;
+}
+form select,button,input{
+    width:100%;
+    border: none;
+    outline:none;
+    border-radius:0.7rem;
+}
+
+form input{
+    margin:0.25rem 0;
+    border: 1px solid var(--border);
+    font-size:1.1rem;
+    padding:0.75rem 0 0.75rem 0.5rem;
+}
+
+.dropdown{
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.select-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+}
+.select-container select{
+    font-size:1.3rem;
+    padding:0.1rem;
+    width:auto;
+}
+.dropdown i{
+    font-size: 1rem;
+    margin-top:1rem;
+}
+.select-container img{
+    max-width: 2.4rem;
+}
+
+.msg{
+    margin:1rem 0;
+}
+
+.btn{
+    background-color: var(--button);
+    font-size:1.1rem;
+    color: white;
+    margin:0.5rem 0 0 0;
+    padding:1.3rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition:background-color .2s ease;
+}
+.btn:hover{
+     background-color: var(--button-hover);
+}
+.btn:focus-visible{
+    background-color: var(--button-hover);
+    outline:2px solid #333;
+}
+input:focus,
+select:focus{
+    outline:2px solid #333;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    appearance:none;
+}
