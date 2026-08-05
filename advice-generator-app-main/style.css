@@ -1,0 +1,88 @@
+:root {
+  --clr-accent: hsl(150, 100%, 66%);
+  --clr-text: hsl(193, 38%, 86%);
+
+  --clr-card: hsl(217, 19%, 24%);
+  --clr-divider: hsl(217, 19%, 38%);
+  --clr-background: hsl(218, 23%, 16%);
+
+  --glow: 0 0 20px hsla(150, 100%, 66%, 0.6);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-background);
+    color: var(--clr-text);
+    font-family: "Manrope", sans-serif;
+}
+
+.card{
+    position:relative;
+    background-color: var(--clr-card);
+    width: min(90vw,540px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 8 30px inherit;
+}
+.title{
+    text-align: center;
+    margin-bottom:1.5rem;
+    color: var(--clr-accent);
+    letter-spacing: 0.25rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.description{
+    padding:1rem;
+    margin-bottom:2rem;
+    font-weight: 800;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.divider{
+    display: block;
+    width:100%;
+    margin: 0 auto 2rem auto;
+}
+.dice-btn{
+    position: absolute;
+    bottom:-2rem;
+    left:50%;
+    transform: translateX(-50%);
+    width:64px;
+    height: 64px;
+    border:none;
+    border-radius: 50%;
+    background-color: var(--clr-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3 ease;
+}
+.dice-btn:hover{
+    box-shadow: var(--glow);
+}
+.attribution{
+    display: none;
+}
+@media (max-width:600px){
+
+    .description{
+        font-size:1.5rem;
+    }
+
+    .divider{
+        content:url("images/pattern-divider-mobile.svg");
+    }
+}
+
