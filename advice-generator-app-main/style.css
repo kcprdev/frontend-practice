@@ -22,6 +22,7 @@ body{
     background-color: var(--clr-background);
     color: var(--clr-text);
     font-family: "Manrope", sans-serif;
+    padding: 1rem;
 }
 
 .card{
@@ -30,7 +31,7 @@ body{
     width: min(90vw,540px);
     border-radius: 1rem;
     padding: 2rem;
-    box-shadow: 0 8 30px inherit;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 .title{
     text-align: center;
@@ -67,10 +68,14 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: 0.3 ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .dice-btn:hover{
     box-shadow: var(--glow);
+    transform: translateX(-50%) scale(1.05);
+}
+.dice-btn:active {
+    transform: translateX(-50%) scale(0.95);
 }
 .attribution{
     display: none;
